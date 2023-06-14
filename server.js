@@ -7,7 +7,7 @@ const app = express()
 
 ///////////// ROUTES
 app.get("/", (req, res) => {
-    res.send('Welcome to the Gitpub App!');
+    res.render("index.ejs");
 })
 
 app.get("/drinks", (req, res) => {
