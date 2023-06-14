@@ -14,6 +14,10 @@ app.get("/drinks", (req, res) => {
     res.send(drinks);
 })
 
+app.get("/drinks/:id", (req, res) => {
+    res.send(req.params.id)
+})
+
 
 ///////////// LISTENER
 app.listen(3000, () => {
