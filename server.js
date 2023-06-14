@@ -14,10 +14,15 @@ app.get("/drinks", (req, res) => {
     res.send(drinks);
 })
 
-app.get("/drinks/:id", (req, res) => {
-    res.send(req.params.id)
+app.get("/drink/:id", (req, res) => {
+    // grab the id from the url
+    const id = req.params.id
+    // create a variable with the drink specified
+    const drink = drinks[id]
+    // dynamically set a class, if needed (example: const readyClass = fruit.readyToEat ? "green" : "red")
+    // render a template with the fruit
+    res.render("show.ejs", {drink})
 })
-
 
 ///////////// LISTENER
 app.listen(3000, () => {
